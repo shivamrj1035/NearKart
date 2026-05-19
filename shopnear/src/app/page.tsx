@@ -211,11 +211,11 @@ function HomeContent() {
               {selectedCategory === cat && (
                 <motion.span
                   layoutId="activeCategoryBubble"
-                  className="absolute inset-0 bg-royal-gradient rounded-full -z-10 shadow-[0_4px_12px_rgba(46,91,255,0.18)]"
+                  className="absolute inset-0 bg-royal-gradient rounded-full shadow-[0_4px_12px_rgba(46,91,255,0.18)]"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
-              {cat}
+              <span className="relative z-10">{cat}</span>
             </button>
           ))}
         </div>
