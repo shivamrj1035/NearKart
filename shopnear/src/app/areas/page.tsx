@@ -113,8 +113,8 @@ export default function AreasPage() {
                       whileTap={{ scale: 0.98 }}
                       whileHover={{ 
                         y: -5, 
-                        boxShadow: "0 12px 30px rgba(37,99,235,0.08)",
-                        borderColor: "#2563EB"
+                        boxShadow: "0 12px 32px rgba(46,91,255,0.1)",
+                        borderColor: "var(--color-brand-primary)"
                       }}
                       className="bg-card-white border border-border-subtle rounded-[20px] p-4 shadow-sm h-full flex flex-col transition-all duration-300"
                     >
@@ -122,7 +122,7 @@ export default function AreasPage() {
                         <h2 className="font-outfit font-bold text-[16px] text-ink-dark">
                           {area}
                         </h2>
-                        <span className="bg-tag-bg text-brand-primary font-figtree text-[12px] px-2.5 py-1 rounded-full font-medium">
+                        <span className="bg-soft-cloudy-gradient border border-brand-primary/5 text-brand-primary font-figtree text-[12px] px-2.5 py-1 rounded-full font-bold shadow-xs">
                           {areaShops.length} shop{areaShops.length !== 1 ? 's' : ''}
                         </span>
                       </div>

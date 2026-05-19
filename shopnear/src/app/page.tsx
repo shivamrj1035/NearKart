@@ -102,7 +102,13 @@ function HomeContent() {
         <div className="flex justify-between items-center px-4 py-3 md:hidden">
           <div className="flex items-center gap-1.5">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#2563EB"/>
+              <defs>
+                <linearGradient id="brandGradientHomeMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#2E5BFF" />
+                  <stop offset="100%" stopColor="#6398F1" />
+                </linearGradient>
+              </defs>
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="url(#brandGradientHomeMobile)"/>
               <path d="M10.5 7.5C10.5 8.33 11.17 9 12 9C12.83 9 13.5 8.33 13.5 7.5C13.5 6.67 12.83 6 12 6C11.17 6 10.5 6.67 10.5 7.5Z" fill="#F59E0B"/>
             </svg>
             <div className="flex">
@@ -125,8 +131,8 @@ function HomeContent() {
         <div className="px-4 pb-3 md:px-0 md:pb-0 md:flex md:items-center md:gap-3">
           <div
             className={cn(
-              "flex items-center gap-2 bg-page-bg rounded-full px-3 py-2.5 border-[1.5px] transition-all duration-250 flex-1 md:bg-card-white md:px-4 md:py-3",
-              isSearchFocused ? "border-brand-primary ring-2 ring-brand-primary/20" : "border-border-subtle"
+              "flex items-center gap-2 bg-card-white rounded-full px-3.5 py-2.5 border-[1.5px] transition-all duration-300 flex-1 md:px-4 md:py-3 shadow-xs",
+              isSearchFocused ? "border-brand-primary ring-4 ring-brand-primary/10 shadow-[0_4px_20px_rgba(46,91,255,0.06)]" : "border-border-subtle hover:border-brand-primary/30"
             )}
           >
             <Search size={18} className="text-text-muted" />
@@ -153,16 +159,6 @@ function HomeContent() {
               )}
             </AnimatePresence>
           </div>
-
-          {/* Desktop Area Selector Button */}
-          <button
-            onClick={() => setAreaSheetOpen(true)}
-            className="hidden md:flex items-center gap-2 bg-card-white text-ink-dark hover:text-brand-primary hover:border-brand-primary border border-border-subtle px-5 py-3.5 rounded-full font-figtree font-medium text-[14px] shadow-sm transition-all shrink-0 cursor-pointer"
-          >
-            <MapPin size={16} className="text-brand-primary" />
-            <span>{selectedArea || "All Areas"}</span>
-            <ChevronDown size={14} />
-          </button>
         </div>
       </header>
 
@@ -189,7 +185,7 @@ function HomeContent() {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.4 }}
-                  className="flex items-center gap-1.5 bg-tag-bg text-brand-primary px-3.5 py-2 rounded-full font-figtree text-[12px] md:text-[13px] font-semibold shadow-sm"
+                  className="flex items-center gap-1.5 bg-soft-cloudy-gradient text-brand-primary px-3.5 py-2 rounded-full font-figtree text-[12px] md:text-[13px] font-bold border border-brand-primary/5 shadow-xs"
                 >
                   <Icon size={13} className={stat.icon === Star ? "text-brand-gold fill-brand-gold" : "text-brand-primary"} />
                   <span>{stat.text}</span>
@@ -208,14 +204,14 @@ function HomeContent() {
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className={cn(
-                "relative px-[18px] py-2 rounded-full font-figtree text-[13px] font-medium transition-colors whitespace-nowrap cursor-pointer",
-                selectedCategory === cat ? "text-card-white" : "text-text-muted border border-border-subtle bg-transparent hover:border-brand-primary hover:text-brand-primary"
+                "relative px-[18px] py-2 rounded-full font-figtree text-[13px] font-semibold transition-all duration-200 whitespace-nowrap cursor-pointer hover:scale-[1.02] active:scale-[0.98]",
+                selectedCategory === cat ? "text-card-white shadow-sm" : "text-text-muted border border-border-subtle bg-card-white/40 hover:border-brand-primary hover:text-brand-primary hover:bg-card-white"
               )}
             >
               {selectedCategory === cat && (
                 <motion.span
                   layoutId="activeCategoryBubble"
-                  className="absolute inset-0 bg-brand-primary rounded-full -z-10"
+                  className="absolute inset-0 bg-royal-gradient rounded-full -z-10 shadow-[0_4px_12px_rgba(46,91,255,0.18)]"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
@@ -407,7 +403,7 @@ function HomeContent() {
               setMaxDistance(tempDistance);
               setDistanceSheetOpen(false);
             }}
-            className="w-full bg-brand-primary text-card-white rounded-full font-figtree font-medium text-[15px] py-3.5"
+            className="w-full bg-royal-gradient text-card-white rounded-full font-figtree font-semibold text-[15px] py-3.5 hover:shadow-[0_6px_20px_rgba(46,91,255,0.3)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
           >
             Apply
           </button>

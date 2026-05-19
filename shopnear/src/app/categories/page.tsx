@@ -87,8 +87,8 @@ export default function CategoriesPage() {
               <Link href={`/?category=${encodeURIComponent(cat)}`}>
                 <motion.div
                   whileTap={{ scale: 0.97 }}
-                  whileHover={{ y: -3, boxShadow: "0 10px 25px rgba(37,99,235,0.05)" }}
-                  className="bg-card-white border border-border-subtle rounded-[20px] p-4.5 flex items-center justify-between cursor-pointer transition-shadow duration-200"
+                  whileHover={{ y: -4, boxShadow: "0 10px 28px rgba(46,91,255,0.08)", borderColor: "var(--color-brand-primary)" }}
+                  className="bg-card-white border border-border-subtle rounded-[20px] p-4.5 flex items-center justify-between cursor-pointer transition-all duration-300"
                 >
                   <div className="flex items-center gap-3.5">
                     {/* Icon container with matching category colors */}

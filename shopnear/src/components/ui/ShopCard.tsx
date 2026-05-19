@@ -27,8 +27,8 @@ export function ShopCard({ shop }: { shop: Shop }) {
     <motion.li
       variants={itemVariants}
       whileTap={{ scale: 0.985 }}
-      whileHover={{ y: -4, boxShadow: "0 10px 28px rgba(37,99,235,0.08)" }}
-      className="bg-card-white border border-border-subtle rounded-[20px] shadow-[0_1px_3px_rgba(0,0,0,0.04)] list-none overflow-hidden relative transition-shadow duration-200"
+      whileHover={{ y: -6, boxShadow: "0 12px 32px rgba(46,91,255,0.12)", borderColor: "var(--color-brand-primary)" }}
+      className="bg-card-white border border-border-subtle rounded-[20px] shadow-[0_1px_3px_rgba(0,0,0,0.04)] list-none overflow-hidden relative transition-all duration-300"
     >
       <Link href={`/shop/${shop.id}`} className="block h-full flex flex-col">
         {/* Thumbnail Image Container */}
@@ -107,11 +107,11 @@ export function ShopCard({ shop }: { shop: Shop }) {
                 e.stopPropagation();
                 window.location.href = `tel:${shop.phone}`;
               }}
-              className="flex-1 border border-brand-primary text-brand-primary rounded-full font-figtree text-[13px] font-medium py-2 text-center hover:bg-tag-bg transition-colors"
+              className="flex-1 border border-brand-primary/30 text-brand-primary rounded-full font-figtree text-[13px] font-semibold py-2 text-center hover:border-brand-primary hover:bg-tag-bg transition-all duration-200"
             >
               📞 Call
             </button>
-            <div className="flex-[2] bg-brand-primary text-card-white rounded-full font-figtree text-[13px] font-medium py-2 text-center flex items-center justify-center hover:bg-brand-primary/95 transition-colors">
+            <div className="flex-[2] bg-royal-gradient text-card-white rounded-full font-figtree text-[13px] font-semibold py-2 text-center flex items-center justify-center hover:shadow-[0_4px_12px_rgba(46,91,255,0.25)] transition-all duration-200">
               View Details →
             </div>
           </div>

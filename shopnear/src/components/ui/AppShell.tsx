@@ -24,11 +24,17 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex bg-page-bg font-figtree">
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden md:flex flex-col w-72 bg-card-white border-r border-border-subtle fixed h-screen z-30">
+      <aside className="hidden md:flex flex-col w-72 bg-card-white/95 backdrop-blur-md border-r border-border-subtle fixed h-screen z-30 shadow-sm">
         {/* Brand Header */}
         <div className="flex items-center gap-2 px-6 py-6 border-b border-border-subtle">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#2563EB" />
+            <defs>
+              <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2E5BFF" />
+                <stop offset="100%" stopColor="#6398F1" />
+              </linearGradient>
+            </defs>
+            <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="url(#brandGradient)" />
             <path d="M10.5 7.5C10.5 8.33 11.17 9 12 9C12.83 9 13.5 8.33 13.5 7.5C13.5 6.67 12.83 6 12 6C11.17 6 10.5 6.67 10.5 7.5Z" fill="#F59E0B" />
           </svg>
           <div className="flex select-none">
@@ -49,7 +55,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                   className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 ${isActive
-                    ? "bg-tag-bg text-brand-primary font-semibold shadow-sm"
+                    ? "bg-tag-bg/90 border border-brand-primary/10 text-brand-primary font-bold shadow-[0_4px_12px_rgba(46,91,255,0.04)]"
                     : "text-text-muted hover:text-ink-dark hover:bg-page-bg/50"
                     }`}
                 >
@@ -58,7 +64,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                     <span className="text-[14px]">{item.name}</span>
                   </div>
                   {item.badge !== undefined && item.badge > 0 && (
-                    <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-brand-primary text-card-white" : "bg-tag-bg text-brand-primary"
+                    <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-royal-gradient text-card-white" : "bg-tag-bg text-brand-primary"
                       }`}>
                       {item.badge}
                     </span>
@@ -83,10 +89,16 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       {/* MAIN CONTAINER */}
       <div className="flex-1 min-w-0 flex flex-col md:pl-72 min-h-screen">
         {/* MOBILE HEADER */}
-        <header className="sticky top-0 z-40 bg-card-white border-b border-border-subtle shadow-sm flex md:hidden items-center justify-between px-4 py-3.5">
+        <header className="sticky top-0 z-40 bg-card-white/95 backdrop-blur-md border-b border-border-subtle shadow-xs flex md:hidden items-center justify-between px-4 py-3">
           <Link href="/" className="flex items-center gap-1.5">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#2563EB" />
+              <defs>
+                <linearGradient id="brandGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#2E5BFF" />
+                  <stop offset="100%" stopColor="#6398F1" />
+                </linearGradient>
+              </defs>
+              <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="url(#brandGradientMobile)" />
               <path d="M10.5 7.5C10.5 8.33 11.17 9 12 9C12.83 9 13.5 8.33 13.5 7.5C13.5 6.67 12.83 6 12 6C11.17 6 10.5 6.67 10.5 7.5Z" fill="#F59E0B" />
             </svg>
             <div className="flex select-none">
@@ -106,7 +118,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </header>
 
         {/* DESKTOP TOP NAV HEADER */}
-        <header className="hidden md:flex items-center justify-between h-20 px-8 bg-card-white border-b border-border-subtle sticky top-0 z-20">
+        <header className="hidden md:flex items-center justify-between h-20 px-8 bg-card-white/90 backdrop-blur-md border-b border-border-subtle sticky top-0 z-20 shadow-sm">
           <div className="flex items-center gap-4">
             <div>
               <h2 className="font-outfit font-bold text-lg text-ink-dark">
@@ -134,32 +146,6 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
 
             <div className="h-6 w-[1px] bg-border-subtle" />
 
-            {/* Horizontal menu */}
-            <nav className="flex items-center gap-6">
-              {[
-                { name: "Home", href: "/" },
-                { name: "Areas", href: "/areas" },
-                { name: "Categories", href: "/categories" },
-                { name: "About Us", href: "/about" },
-              ].map((link) => {
-                const isLinkActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`text-[14px] font-medium transition-colors ${isLinkActive
-                      ? "text-brand-primary"
-                      : "text-text-muted hover:text-brand-primary"
-                      }`}
-                  >
-                    {link.name}
-                  </Link>
-                );
-              })}
-            </nav>
-
-            <div className="h-6 w-[1px] bg-border-subtle" />
-
             {/* Saved button and profile */}
             <div className="flex items-center gap-3">
               <Link href="/saved">
@@ -169,7 +155,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                 >
                   <Heart size={20} className={savedIds.length > 0 ? "fill-brand-primary text-brand-primary" : ""} />
                   {savedIds.length > 0 && (
-                    <span className="absolute -top-1 -right-1 bg-brand-primary text-card-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-card-white animate-pulse">
+                    <span className="absolute -top-1 -right-1 bg-royal-gradient text-card-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-card-white animate-pulse">
                       {savedIds.length}
                     </span>
                   )}
@@ -183,7 +169,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                     <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] inline-block" /> Online
                   </span>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-brand-primary text-card-white font-outfit font-bold flex items-center justify-center shadow-sm select-none">
+                <div className="w-10 h-10 rounded-full bg-royal-gradient text-card-white font-outfit font-bold flex items-center justify-center shadow-[0_4px_12px_rgba(46,91,255,0.15)] select-none">
                   LG
                 </div>
               </div>

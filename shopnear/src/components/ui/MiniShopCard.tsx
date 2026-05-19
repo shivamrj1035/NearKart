@@ -10,8 +10,8 @@ export function MiniShopCard({ shop }: { shop: Shop }) {
     <Link href={`/shop/${shop.id}`}>
       <motion.div
         whileTap={{ scale: 0.96 }}
-        whileHover={{ y: -2, boxShadow: "0 6px 20px rgba(37,99,235,0.06)" }}
-        className="bg-card-white border border-border-subtle rounded-2xl w-[180px] shrink-0 overflow-hidden flex flex-col transition-shadow duration-200"
+        whileHover={{ y: -4, boxShadow: "0 8px 24px rgba(46,91,255,0.1)", borderColor: "var(--color-brand-primary)" }}
+        className="bg-card-white border border-border-subtle rounded-2xl w-[180px] shrink-0 overflow-hidden flex flex-col transition-all duration-300"
       >
         {/* Thumbnail Image Container */}
         <div className="relative h-24 w-full bg-slate-100 overflow-hidden">

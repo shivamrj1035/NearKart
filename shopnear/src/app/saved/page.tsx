@@ -32,8 +32,8 @@ export default function SavedPage() {
           </p>
         </div>
         {mounted && savedShops.length > 0 && (
-          <span className="bg-[#EFF6FF] text-brand-primary font-figtree text-[13px] px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
-            <Heart size={14} className="fill-brand-primary" />
+          <span className="bg-soft-cloudy-gradient border border-brand-primary/5 text-brand-primary font-figtree text-[13px] px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-xs">
+            <Heart size={14} className="fill-brand-primary text-brand-primary" />
             {savedShops.length} {savedShops.length === 1 ? "Shop" : "Shops"}
           </span>
         )}
@@ -54,7 +54,7 @@ export default function SavedPage() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center justify-center py-20 px-4 text-center"
           >
-            <div className="w-16 h-16 rounded-full bg-[#EFF6FF] flex items-center justify-center mb-5 text-brand-primary">
+            <div className="w-16 h-16 rounded-full bg-tag-bg flex items-center justify-center mb-5 text-brand-primary">
               <Heart size={28} className="text-brand-primary" />
             </div>
             <h2 className="font-outfit font-bold text-[18px] text-ink-dark mb-2">
@@ -65,7 +65,7 @@ export default function SavedPage() {
             </p>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 bg-brand-primary text-card-white font-figtree font-medium text-[14px] px-6 py-3 rounded-full hover:bg-brand-primary/95 transition-all shadow-[0_4px_14px_rgba(37,99,235,0.2)]"
+              className="inline-flex items-center gap-2 bg-royal-gradient text-card-white font-figtree font-semibold text-[14px] px-6 py-3 rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_14px_rgba(46,91,255,0.2)] hover:shadow-[0_6px_20px_rgba(46,91,255,0.3)] cursor-pointer"
             >
               <Search size={16} />
               <span>Explore Nearby Shops</span>
