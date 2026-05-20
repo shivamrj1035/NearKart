@@ -1,0 +1,27 @@
+{
+  "name": "@shopnearby/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start:prod": "node dist/main.js",
+    "lint": "echo \"TODO: add NestJS linting\"",
+    "typecheck": "echo \"TODO: add NestJS typecheck\""
+  },
+  "dependencies": {
+    "@nestjs/common": "^11.1.9",
+    "@nestjs/core": "^11.1.9",
+    "@shopnearby/types": "workspace:*",
+    "@shopnearby/validation": "workspace:*",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.14",
+    "@nestjs/schematics": "^11.0.9",
+    "@nestjs/testing": "^11.1.9",
+    "@types/node": "^20",
+    "typescript": "^5"
+  }
+}

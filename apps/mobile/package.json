@@ -1,0 +1,19 @@
+{
+  "name": "@shopnearby/mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "expo start",
+    "lint": "echo \"TODO: add Expo linting\"",
+    "typecheck": "echo \"TODO: add Expo typecheck\""
+  },
+  "dependencies": {
+    "@shopnearby/theme": "workspace:*",
+    "@shopnearby/types": "workspace:*",
+    "@shopnearby/validation": "workspace:*",
+    "@shopnearby/sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

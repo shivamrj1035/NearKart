@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.*
+
+# PNPM / Turbo
+.pnpm-store/
+.turbo/
+_tmp_*
+
+# Build output
+.next/
+out/
+build/
+dist/
+coverage/
+.expo/
+.expo-shared/
+web-build/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Deployment state
+.vercel/
+
+# TypeScript / tooling cache
+*.tsbuildinfo
+.eslintcache
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# This repo uses PNPM workspaces; do not commit other lockfiles.
+package-lock.json
+yarn.lock
