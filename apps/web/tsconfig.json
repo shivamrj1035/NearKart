@@ -2,7 +2,11 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,12 +25,24 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@shopnearby/theme": ["../../packages/theme/index.ts"],
-      "@shopnearby/types": ["../../packages/types/index.ts"],
-      "@shopnearby/validation": ["../../packages/validation/index.ts"],
-      "@shopnearby/sdk": ["../../packages/sdk/index.ts"],
-      "@shopnearby/utils": ["../../packages/utils/index.ts"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@shopnearby/theme": [
+        "../../packages/theme/index.ts"
+      ],
+      "@shopnearby/types": [
+        "../../packages/types/index.ts"
+      ],
+      "@shopnearby/validation": [
+        "../../packages/validation/index.ts"
+      ],
+      "@shopnearby/sdk": [
+        "../../packages/sdk/index.ts"
+      ],
+      "@shopnearby/utils": [
+        "../../packages/utils/index.ts"
+      ]
     }
   },
   "include": [
@@ -37,5 +53,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
